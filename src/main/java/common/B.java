@@ -185,6 +185,7 @@ public class B {
                 }
             }
 
+
             List<Integer> sad = new ArrayList<>();
             sad.add(cc[0]);
             for (int k = 1;k < cc.length;k++){
