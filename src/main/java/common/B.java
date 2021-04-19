@@ -197,7 +197,7 @@ public class B {
             }
 
             int asd = r.nextInt(sad.size());
-            as.add(sad.get(asd));
+            int blue = sad.get(asd);
 
             QueryWrapper<Number> wrapper = new QueryWrapper<>();
             wrapper.eq("red1",as.get(0))
@@ -206,12 +206,12 @@ public class B {
                     .eq("red4",as.get(3))
                     .eq("red5",as.get(4))
                     .eq("red6",as.get(5))
-                    .eq("blue",cc[0]);
+                    .eq("blue",blue);
             List<Number> number = numberMapper.selectList(wrapper);
 
 
             if (number.size() == 0){
-                System.out.println("第一注："+as.get(0)+"   "+as.get(1)+"   "+as.get(2)+"   "+as.get(3)+"   "+as.get(4)+"   "+as.get(5)+"   "+cc[0]);
+                System.out.println("第"+m+"注："+as.get(0)+"   "+as.get(1)+"   "+as.get(2)+"   "+as.get(3)+"   "+as.get(4)+"   "+as.get(5)+"   "+blue);
                 m += 1;
             }
         }
