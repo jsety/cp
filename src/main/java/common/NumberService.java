@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,11 +22,12 @@ public class NumberService {
     @Autowired
     private WebClient webClient;
 
-//    拉取历史数据（提前清掉数据库）
-//    @PostConstruct
+//    拉取历史数据
+    @PostConstruct
     public void main(){
         String response = webClient.get().uri("https://datachart.500.com/ssq/zoushi/newinc/jbzs_redblue.php?expect=1000000").retrieve().bodyToMono(String.class).block();
         String[] s = response.split("\n");
+        numberMapper.delete(null);
         List<String> ls = Arrays.asList(s);
         List<String> lss = new ArrayList<>();
         List<String> lsss = new ArrayList<>();
@@ -76,9 +78,10 @@ public class NumberService {
 
     }
 
-    public String aaaaaaa(String a){
+    public Integer aaaaaaa(String a){
         String[] aa = a.split(">");
-        return aa[1];
+
+        return Integer.valueOf(aa[1].trim());
     }
 
 }

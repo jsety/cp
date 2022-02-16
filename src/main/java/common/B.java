@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * @date 2021/4/14
  */
 
-@Component
+//@Component
 public class B {
 
     @Autowired
@@ -45,7 +45,7 @@ public class B {
         }
 
         for (int i = 0;i<33;i++){
-//            System.out.println(index[i] +"出现的次数："+ counts[i]);
+            System.out.println(index[i] +"出现的次数："+ counts[i]);
         }
 
 

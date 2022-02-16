@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 @TableName("number")
 public class Number {
     @TableId
-    private String indexDate;
+    private Integer indexDate;
     private Integer red1;
     private Integer red2;
     private Integer red3;
@@ -80,15 +80,15 @@ public class Number {
     public Number() {
     }
 
-    public String getIndexDate() {
+    public Integer getIndexDate() {
         return indexDate;
     }
 
-    public void setIndexDate(String indexDate) {
+    public void setIndexDate(Integer indexDate) {
         this.indexDate = indexDate;
     }
 
-    public Number(String indexDate, Integer red1, Integer red2, Integer red3, Integer red4, Integer red5, Integer red6, Integer blue) {
+    public Number(Integer indexDate, Integer red1, Integer red2, Integer red3, Integer red4, Integer red5, Integer red6, Integer blue) {
         this.indexDate = indexDate;
         this.red1 = red1;
         this.red2 = red2;
